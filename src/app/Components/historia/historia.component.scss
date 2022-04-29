@@ -1,0 +1,140 @@
+@import url(https://fonts.googleapis.com/css?family=Kanit:700,300);
+
+@import url(https://fonts.googleapis.com/css?family=EB+Garamond);
+
+body {
+  background-color: #fff;
+  margin: 50px;
+}
+
+a {
+  text-decoration: none;
+  color: #446CB3;
+  margin: 0px 5px;
+}
+
+.avery {
+  float: left;
+  height: 500px;
+  width: 355px;
+  margin: 0px 90px 50px 0px;
+  background-color: #22313F;
+}
+
+.avery img {
+  height: 500px;
+}
+
+.container {
+  max-width: 1200px;
+}
+
+.credit {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-family: 'Kanit', sans-serif;
+  font-size: 1.2em;
+  font-weight: 300;
+  color: #777;
+  line-height: 1.5em;
+  margin: 560px 50px;
+}
+
+#overlay {
+ position: absolute;
+ top: 0;
+ left: 0;
+ margin: 50px;
+ z-index: 3;
+}
+
+#spacer-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 70px;
+  width: 100%;
+  background-color: #fff;
+  margin: -20px 0px;
+}
+
+#spacer-right {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 550px;
+  width: 90px;
+  background-color: #fff;
+  margin: 50px 405px;
+}
+
+#spacer-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 50px;
+  background-color: #fff;
+  margin: 0px;
+}
+
+.star-spin {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/387928/star-background.jpg);
+  margin: -50px -60px;
+  width: 550px;
+  height: 550px;
+  border-radius: 50%;
+  -webkit-filter: blur(1px);
+  -moz-filter: blur(1px);
+  -o-filter: blur(1px);
+  -ms-filter: blur(1px);
+  filter: blur(1px);
+  -webkit-filter: brightness(.7);
+  -moz-filter: brightness(.7);
+  -o-filter: brightness(.7);
+  -ms-filter: brightness(.7);
+  filter: brightness(.7);
+  -webkit-animation: spin 38s linear infinite;
+  -moz-animation: spin 38s linear infinite;
+  -ms-animation: spin 38s linear infinite;
+  animation: spin 38s linear infinite;
+}
+
+.text {
+  font-family: 'EB Garamond', serif;
+  font-size: 1.4em;
+  text-align: justify;
+  line-height: 1.7em;
+  max-width: 1100px;
+  margin: 25px 0px;
+}
+
+.text::first-letter {
+  font-family: 'Kanit', sans-serif;
+  font-size: 6em;
+  font-weight: 700;
+  float: left;
+  line-height: 80px;
+  padding: 20px 10px 0px 0px;
+}
+
+@-ms-keyframes spin {
+  from { -ms-transform: rotate(0deg); }
+  to { -ms-transform: rotate(360deg); }
+}
+@-moz-keyframes spin {
+  from { -moz-transform: rotate(0deg); }
+  to { -moz-transform: rotate(360deg); }
+}
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+  from { -webkit-transform: rotate(0deg); }
+  to { -webkit-transform: rotate(360deg); }
+}

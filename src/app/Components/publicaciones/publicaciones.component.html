@@ -1,0 +1,77 @@
+<table class="entire-page">
+  <tr>
+    <td>
+      <table class="email-body">
+        <tr>
+          <td class="news-section">
+            <br />
+            <h1 style="text-align: center">{{ postList.title }}</h1>
+            <p>{{ postList.authorName }}</p>
+
+            <br />
+
+            <img src="/assets/img/Iglesia.jpg" />
+
+            <div *ngIf="postList.dateUpdate === null">
+              <p>Publicado: {{ postList.datePublication }}</p>
+            </div>
+
+            <div *ngIf="postList.dateUpdate != null">
+              <p>Publicacion editada: {{ postList.datePublication }}</p>
+            </div>
+
+            <br />
+
+            <p style="color: black">{{ postList.description }}</p>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+<hr>
+
+<div class="container" *ngIf="postList.comments === false">
+  <br>
+  <div class="row">
+    <div class="col"></div>
+    <div class="col">
+      <h5 style="text-align: center;">Comentarios desactivados...</h5>
+    </div>
+    <div class="col"></div>
+  </div>
+  <br>
+</div>
+
+<div class="comments-container" *ngIf="postList.comments === true">
+  <h1>Comentarios</h1>
+
+  <br />
+
+  <form>
+    <div class="mb-3">
+      <input type="text" class="form-control" id="Comentarios" placeholder="Realizar un comentario..." name="comment"
+      #comment="ngModel" [(ngModel)]="modelComments.comment">
+    </div>
+    <button type="submit" class="btn btn-outline-success" (click)="crearComentario(postList._id)">Publicar</button>
+  </form>
+
+  <ul id="comments-list" class="comments-list">
+    <li>
+      <div class="comment-main-level" *ngFor="let comts of comentarios">
+        <div class="comment-box">
+          <div class="comment-head">
+            <h6 class="comment-name"><a>Anónimo</a></h6>
+            <span>{{ comts.datePublication }}</span>
+            <i class="fa fa-reply"></i>
+            <i class="fa fa-heart"></i>
+          </div>
+          <div class="comment-content">
+            {{ comts.comment }}
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>

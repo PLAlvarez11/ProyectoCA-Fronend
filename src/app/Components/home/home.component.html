@@ -1,0 +1,39 @@
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>Noticias</h1>
+    </div>
+    <div class="col">
+    </div>
+  </div>
+
+<br>
+
+<div class="container" *ngFor="let public of publicaciones">
+  <div>
+
+    <div class="blog-card">
+      <div class="meta">
+        <div class="photo" style="background-image: url(https://storage.googleapis.com/chydlx/codepen/blog-cards/image-1.jpg)"></div>
+        <ul class="details">
+        </ul>
+      </div>
+      <div class="description">
+        <h1>{{public.title}}</h1>
+        <h2>{{public.datePublication}}</h2>
+        <h2>{{public.authorName}}</h2>
+        <p class="read-more">
+          <a [routerLink]="['/Publicaciones', public._id]" >Leer más</a>
+        </p>
+      </div>
+    </div>
+
+  </div>
+  <!-- <div>
+    Post 2
+  </div>
+  <div>
+    Post 3
+  </div> -->
+</div>
