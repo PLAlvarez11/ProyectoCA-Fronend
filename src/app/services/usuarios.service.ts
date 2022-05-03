@@ -48,7 +48,34 @@ export class UsuariosService {
   }
 
   obtenerUsuarioID(id: String): Observable<any>{
-    let headersToken = this.headersVariable.set('Authorization', this.obtenerToken());
-    return this._http.get(this.ruta + '/buscarPublicador' + id, {headers: headersToken})
+    return this._http.get(this.ruta + '/buscarPublicador/' + id, {headers: this.headersVariable})
   }
+
+  editarUsuario(usuario: Usuario): Observable<any>{
+    let params = JSON.stringify(usuario);
+    let headersToken = this.headersVariable.set('Authorization', this.obtenerToken());
+    return this._http.put(this.ruta + '/editarUsuario/' + usuario._id, params, {headers: headersToken})
+  }
+
+  eliminarUsuario(id: String): Observable<any>{
+    let headersToken = this.headersVariable.set('Authorization', this.obtenerToken());
+    return this._http.delete(this.ruta + 'eliminarUsuario/' + id, {headers: headersToken})
+  }
+
+  getUsuarios(): Observable <any>{
+    return this._http.get(this.ruta + 'mostrarPublicadores/', {headers: this.headersVariable, });
+  }
+
+  createUsuario(user: Usuario): Observable <any>{
+    let params = JSON.stringify(user);
+    let headersToken = this.headersVariable.set('Authorization', this.obtenerToken());
+    return this._http.post(this.ruta + "registrarUsuario/", params, {headers: headersToken})
+  }
+
+  editarUsuarioADMIN(usuario: Usuario, id: string): Observable<any>{
+    let params = JSON.stringify(usuario);
+    let headersToken = this.headersVariable.set('Authorization', this.obtenerToken());
+    return this._http.put(this.ruta + '/editarUsuario/' + id, params, {headers: headersToken})
+  }
+
 }

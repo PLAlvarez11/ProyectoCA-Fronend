@@ -1,0 +1,94 @@
+<div *ngIf="_usuarioService.obtenerIdentidad().usuario != null">
+
+  <!-- Panel de control lateral -->
+  <nav class="main-menu">
+    <div class="scrollbar" id="style-1">
+      <ul>
+        <li routerLink="/Inicio">
+          <i class="fa fa-home fa-lg"></i>
+          <span class="nav-text">Inicio</span>
+        </li>
+
+        <li routerLink="/Dashboard">
+          <i class="fa fa-user fa-lg"></i>
+          <span class="nav-text">Perfil</span>
+        </li>
+
+        <li class="darkerlishadow">
+          <i class="fa fa-file" aria-hidden="true"></i>
+          <span class="nav-text">Noticias</span>
+        </li>
+
+        <li class="darkerli" routerLink="/Publicadores">
+          <i class="fa fa-users" aria-hidden="true"></i>
+          <span class="nav-text">Publicadores</span>
+        </li>
+
+        <li class="darkerli" routerLink="/Comentarios">
+          <i class="fa fa-comments-o" aria-hidden="true"></i>
+          <span class="nav-text">Comentarios</span>
+        </li>
+      </ul>
+
+      <ul class="logout">
+        <li (click)="cerrarSesion()" routerLink="/Inicio">
+          <i class="fa fa-sign-out" aria-hidden="true"></i>
+          <span class="nav-text">
+            Cerrar Sesión
+          </span>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+   <!-- Titulo -->
+   <div class="container">
+    <div class="row justify-content-md-center d-none d-md-block">
+      <div class="col-md-auto">
+        <h1>Comentarios</h1>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cuerpo -->
+  <div class="container">
+    <div class="row justify-content-md-center">
+      <div class="col-md-auto">
+
+        <div class="comments-container">
+
+          <ul id="comments-list" class="comments-list">
+            <li>
+              <div class="comment-main-level">
+                <div class="comment-box">
+                  <div class="comment-head">
+                    <h6 class="comment-name"><a>Anónimo</a></h6>
+                    <span>FECHA DE Publicacion</span>
+                    <i class="fa fa-reply"></i>
+                    <i class="fa fa-heart"></i>
+                  </div>
+                  <div class="comment-content">
+                    COMENTARIO
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+ <!-- Mensaje sin autorizaion -->
+ <div class="container" *ngIf="_usuarioService.obtenerIdentidad().usuario == null">
+  <br />
+  <div class="row justify-content-md-center">
+    <div class="col-md-auto">
+      <h1 class="tit">NO TIENES AUTORIZACIÓN</h1>
+    </div>
+  </div>
+</div>

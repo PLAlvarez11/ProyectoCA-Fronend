@@ -25,4 +25,9 @@ export class PostService {
   getPostID(idPost: String): Observable<any> {
     return this._http.get(this.ruta + 'verPost/' + idPost, {headers: this.headersVariable, });
   }
+
+  getPostAuthor(idAutor: String): Observable<any>{
+    return this._http.get(this.ruta + 'autorPost/' + idAutor, {headers: this.headersVariable, });
+  }
+
 }

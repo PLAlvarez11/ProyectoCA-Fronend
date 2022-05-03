@@ -208,3 +208,49 @@ h1{
     }
   }
 }
+
+//-------------------------------------------------------------------------------------------------
+
+.banner{
+  background-image: url("/assets/img/banner.jpg");
+  height:280px;
+}
+
+.banner>h2,
+.banner .info{
+  height:50px;
+  line-height:50px;
+  position:relative;
+  top:115px;
+  margin:0 auto;
+  text-align:center;
+  width:50%;
+}
+
+.banner>h2{
+  font-size:2.5em;
+  color:white;
+}
+
+.banner .info{
+  display:none;
+}
+
+.banner a{
+	height:50px;
+  font-size:1.3em;
+  display:inline-block;
+  width:48%;
+  text-decoration:none;
+  border:2px solid rgba(0,0,0,.3);
+  margin-right:-4px;
+  transition:all .3s ease-in-out;
+}
+
+.banner a:last-child{
+ 	margin-left:2%;
+}
+
+.banner a:hover{
+  background:#8FC6FF;
+}

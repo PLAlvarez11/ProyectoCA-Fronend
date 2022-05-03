@@ -11,6 +11,9 @@ import { HistoriaComponent } from './Components/historia/historia.component';
 import { JuegosComponent } from './Components/juegos/juegos.component';
 import { LoginComponent } from './Components/login/login.component';
 import { DashboardComponent } from './Components/dashboard/dashboard.component';
+import { PublicadoresComponent } from './Components/publicadores/publicadores.component';
+import { AutorComponent } from './Components/autor/autor.component';
+import { ComentariosComponent } from './Components/comentarios/comentarios.component';
 
 
 @NgModule({
@@ -22,7 +25,10 @@ import { DashboardComponent } from './Components/dashboard/dashboard.component';
     HistoriaComponent,
     JuegosComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    PublicadoresComponent,
+    AutorComponent,
+    ComentariosComponent
   ],
   imports: [
     BrowserModule,

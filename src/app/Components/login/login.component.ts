@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
     private _usuarioService: UsuariosService,
     private _router: Router
   ) {
-    this.usuarioModel = new Usuario('', '','','','');
+    this.usuarioModel = new Usuario('', '','','','', '');
   }
 
   ngOnInit(): void {

@@ -1,4 +1,8 @@
-<br>
+<div class="banner">
+  <h2>Colonia CentroAmerica</h2>
+</div>
+
+<!-- <br>
 <div class="container">
   <div class="row">
     <div class="col">
@@ -6,7 +10,7 @@
     </div>
     <div class="col">
     </div>
-  </div>
+  </div> -->
 
 <br>
 
@@ -22,18 +26,12 @@
       <div class="description">
         <h1>{{public.title}}</h1>
         <h2>{{public.datePublication}}</h2>
-        <h2>{{public.authorName}}</h2>
+        <h2 [routerLink]="['/Autor', public.author]">{{public.authorName}}</h2>
         <p class="read-more">
-          <a [routerLink]="['/Publicaciones', public._id]" >Leer más</a>
+          <a [routerLink]="['/Post', public._id]" >Leer más</a>
         </p>
       </div>
     </div>
 
   </div>
-  <!-- <div>
-    Post 2
-  </div>
-  <div>
-    Post 3
-  </div> -->
 </div>

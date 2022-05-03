@@ -2,14 +2,14 @@
   <nav class="main-menu">
     <div class="scrollbar" id="style-1">
       <ul>
-        <li>
+        <li routerLink="/Inicio">
           <i class="fa fa-home fa-lg"></i>
-          <span class="nav-text" routerLink="/Inicio">Inicio</span>
+          <span class="nav-text" >Inicio</span>
         </li>
 
-        <li>
+        <li  routerLink="/Dashboard">
           <i class="fa fa-user fa-lg"></i>
-          <span class="nav-text" routerLink="/Dashboard">Perfil</span>
+          <span class="nav-text">Perfil</span>
         </li>
 
         <li class="darkerlishadow">
@@ -17,21 +17,21 @@
           <span class="nav-text">Noticias</span>
         </li>
 
-        <li class="darkerli">
+        <li class="darkerli" routerLink="/Publicadores">
           <i class="fa fa-users" aria-hidden="true"></i>
-          <span class="nav-text">Publicadores</span>
+          <span class="nav-text" >Publicadores</span>
         </li>
 
-        <li class="darkerli">
+        <li class="darkerli"  routerLink="/Comentarios">
           <i class="fa fa-comments-o" aria-hidden="true"></i>
           <span class="nav-text">Comentarios</span>
         </li>
       </ul>
 
       <ul class="logout">
-        <li>
+        <li (click)="cerrarSesion()" routerLink="/Inicio">
           <i class="fa fa-sign-out" aria-hidden="true"></i>
-          <span class="nav-text" (click)="cerrarSesion()" routerLink="/Inicio">
+          <span class="nav-text" >
             Cerrar Sesión
           </span>
         </li>
@@ -88,11 +88,11 @@
                     }}" disabled />
                 </div>
                 <div class="d-grid gap-2 d-md-block d-md-flex justify-content-md-end">
-                  <button type="submit" class="btn btn-block" data-bs-toggle="modal" data-bs-target="#EditarUser">
-                    Editar Perfil
+                  <button type="submit" class="btn btn-block" data-bs-toggle="modal" data-bs-target="#EditarUser" (click)="obtenerUsuarioId(_usuarioService.obtenerIdentidad()._id)">
+                    Editar mi Perfil
                   </button>
                   <button type="submit" class="btn btn-block" data-bs-toggle="modal" data-bs-target="#EliminarUser">
-                    Eliminar Perfil
+                    Eliminar mi Perfil
                   </button>
                 </div>
                 <br />
@@ -107,7 +107,7 @@
             <div class="modal-content">
               <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">
-                  Editar mi perfil
+                  Editar mi Perfil
                 </h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
@@ -120,19 +120,20 @@
                   </div>
                   <div class="mb-3 form-input">
                     <label for="exampleInputPassword1" class="form-label">Nombre</label>
-                    <input type="text" class="form-control" name="apellidos" />
+                    <input type="text" class="form-control" name="nombre" #nombre="ngModel"
+                    [(ngModel)]="usuarioIDModel.nombre" />
                   </div>
                   <div class="mb-3 form-input">
                     <label for="exampleInputPassword1" class="form-label">Apellido</label>
-                    <input type="text" class="form-control" name="usuario" />
+                    <input type="text" class="form-control" name="apellido" #apellido="ngModel" [(ngModel)]="usuarioIDModel.apellido" />
                   </div>
                 </form>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
                   Cancelar
                 </button>
-                <button type="button" data-bs-dismiss="modal" class="btn btn-primary">
+                <button type="button" data-bs-dismiss="modal" class="btn btn-primary"  (click)="editarUsuario()">
                   Guardar Cambios
                 </button>
               </div>
@@ -147,24 +148,25 @@
             <div class="modal-content">
               <div class="modal-header">
                 <h5 class="modal-title" id="staticBackdropLabel">
-                  ELIMINAR PERFIL
+                  Eliminar mi Perfil
                 </h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
-                ¿Esta seguro de eliminar su cuenta? al eliminar se perderan
-                todos sus datos y no podrá recuperarlos
+                ¿Esta seguro de eliminar su cuenta?
+                <br> Al eliminar se perderan todos sus datos y no podrá recuperarlos. Tambien se eliminaran todas sus publicaciones hechas.
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
                   Cancelar
                 </button>
-                <!-- <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
-                 (click)="eliminarUser(_usuarioService.obtenerIdentidad()._id)" (click)="cerrarSesion()">Eliminar</button> -->
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal"
+                 (click)="eliminarUser(_usuarioService.obtenerIdentidad()._id)" (click)="cerrarSesion()">Eliminar</button>
               </div>
             </div>
           </div>
         </div>
+
       </div>
     </div>
   </div>
