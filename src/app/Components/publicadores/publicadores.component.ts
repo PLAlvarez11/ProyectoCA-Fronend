@@ -30,7 +30,6 @@ export class PublicadoresComponent implements OnInit {
     this._usuarioService.getUsuarios().subscribe(
       response=>{
         this.publisher = response.publicadores;
-        console.table(response.publicadores)
       }
     )
   }

@@ -57,15 +57,14 @@
     <button type="submit" class="btn btn-outline-success" (click)="crearComentario(postList._id)">Publicar</button>
   </form>
 
-  <ul id="comments-list" class="comments-list">
-    <li>
-      <div class="comment-main-level" *ngFor="let comts of comentarios">
+  <ul id="comments-list" class="comments-list" *ngFor="let comts of comentarios">
+    <li >
+      <div class="comment-main-level">
         <div class="comment-box">
           <div class="comment-head">
-            <h6 class="comment-name"><a>Anónimo</a></h6>
+            <h6 class="comment-name"><a>{{comts.namePost}}</a></h6>
             <span>{{ comts.datePublication }}</span>
-            <i class="fa fa-reply"></i>
-            <i class="fa fa-heart"></i>
+            <i class="fa fa-trash-o" aria-hidden="true"></i>
           </div>
           <div class="comment-content">
             {{ comts.comment }}

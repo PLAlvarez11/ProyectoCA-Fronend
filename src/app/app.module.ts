@@ -14,6 +14,9 @@ import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { PublicadoresComponent } from './Components/publicadores/publicadores.component';
 import { AutorComponent } from './Components/autor/autor.component';
 import { ComentariosComponent } from './Components/comentarios/comentarios.component';
+import { PostPanelComponent } from './Components/post-panel/post-panel.component';
+import { PostCreateComponent } from './Components/post-create/post-create.component';
+
 
 
 @NgModule({
@@ -28,7 +31,9 @@ import { ComentariosComponent } from './Components/comentarios/comentarios.compo
     DashboardComponent,
     PublicadoresComponent,
     AutorComponent,
-    ComentariosComponent
+    ComentariosComponent,
+    PostPanelComponent,
+    PostCreateComponent
   ],
   imports: [
     BrowserModule,

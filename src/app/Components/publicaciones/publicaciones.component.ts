@@ -26,7 +26,7 @@ export class PublicacionesComponent implements OnInit {
     private _router: Router,
     private _CommentService: CommentService
   ) {
-    this.modelComments = new Comment('', '', '');
+    this.modelComments = new Comment('', '', '', '');
     this.modelPost = new Post('', '', '', '', '', '', '', '', false)
   }
 

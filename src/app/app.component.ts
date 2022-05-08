@@ -10,5 +10,6 @@ import { PostService } from './services/post.service';
   ]
 })
 export class AppComponent {
+
   title = 'ProyectoColoniaCA';
 }

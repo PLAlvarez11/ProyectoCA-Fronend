@@ -14,7 +14,7 @@
           <span class="nav-text">Perfil</span>
         </li>
 
-        <li class="darkerlishadow">
+        <li class="darkerlishadow" routerLink="/PanelNoticias">
           <i class="fa fa-file" aria-hidden="true"></i>
           <span class="nav-text">Noticias</span>
         </li>
@@ -45,7 +45,7 @@
    <div class="container">
     <div class="row justify-content-md-center d-none d-md-block">
       <div class="col-md-auto">
-        <h1>Comentarios</h1>
+        <h1>Panel de Comentarios</h1>
       </div>
     </div>
   </div>
@@ -55,20 +55,21 @@
     <div class="row justify-content-md-center">
       <div class="col-md-auto">
 
-        <div class="comments-container">
+        <div class="comments-container" *ngFor="let comts of comentarios">
 
           <ul id="comments-list" class="comments-list">
-            <li>
+            <li >
               <div class="comment-main-level">
                 <div class="comment-box">
                   <div class="comment-head">
-                    <h6 class="comment-name"><a>Anónimo</a></h6>
-                    <span>FECHA DE Publicacion</span>
-                    <i class="fa fa-reply"></i>
-                    <i class="fa fa-heart"></i>
+                    <h6 class="comment-name" [routerLink]="['/Post', comts.idPost]"><a>{{comts.namePost}}</a></h6>
+                    <span>{{ comts.datePublication }}</span>
+
+                    <i class="fa fa-trash-o" aria-hidden="true" data-bs-toggle="modal" data-bs-target="#EliminarComment" (click)="getComment(comts._id)" ></i>
+
                   </div>
                   <div class="comment-content">
-                    COMENTARIO
+                    <strong>{{ comts.comment }}</strong>
                   </div>
                 </div>
               </div>
@@ -80,7 +81,31 @@
     </div>
   </div>
 
+</div>
 
+  <!--MODAL ELIMINAR COMENTARIO-->
+  <div class="modal fade" id="EliminarComment" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">
+          Eliminar el Comentario
+        </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Estas seguro de eliminar el comentario <strong>{{nameComment}}</strong>?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Cancelar
+        </button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal"
+         (click)="removeCommment()">Eliminar</button>
+      </div>
+    </div>
+  </div>
 </div>
 
  <!-- Mensaje sin autorizaion -->

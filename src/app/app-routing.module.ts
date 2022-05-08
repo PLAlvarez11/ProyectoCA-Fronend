@@ -7,6 +7,8 @@ import { HistoriaComponent } from './Components/historia/historia.component';
 import { HomeComponent } from './Components/home/home.component';
 import { JuegosComponent } from './Components/juegos/juegos.component';
 import { LoginComponent } from './Components/login/login.component';
+import { PostCreateComponent } from './Components/post-create/post-create.component';
+import { PostPanelComponent } from './Components/post-panel/post-panel.component';
 import { PublicacionesComponent } from './Components/publicaciones/publicaciones.component';
 import { PublicadoresComponent } from './Components/publicadores/publicadores.component';
 
@@ -20,6 +22,8 @@ const routes: Routes = [
   {path: 'Publicadores', component: PublicadoresComponent},
   {path: 'Autor/:idAutor', component: AutorComponent},
   {path: 'Comentarios', component: ComentariosComponent},
+  {path: 'PanelNoticias', component: PostPanelComponent},
+  {path: 'CrearNoticias', component: PostCreateComponent},
   {path: '**', component: HomeComponent}
 ];
 

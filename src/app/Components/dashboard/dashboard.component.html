@@ -12,7 +12,7 @@
           <span class="nav-text">Perfil</span>
         </li>
 
-        <li class="darkerlishadow">
+        <li class="darkerlishadow" routerLink="/PanelNoticias">
           <i class="fa fa-file" aria-hidden="true"></i>
           <span class="nav-text">Noticias</span>
         </li>
@@ -172,6 +172,7 @@
   </div>
 </div>
 
+<!-- Mensaje de no autirazion -->
 <div class="container" *ngIf="_usuarioService.obtenerIdentidad().usuario == null">
   <br />
   <div class="row justify-content-md-center">
