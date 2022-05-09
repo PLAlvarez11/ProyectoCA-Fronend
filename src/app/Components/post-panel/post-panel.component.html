@@ -48,6 +48,17 @@
     </div>
   </div>
 
+  <div class="container" *ngIf="_usuarioService.obtenerIdentidad().rol == 'ROL_Publicador' ">
+    <div class="row">
+      <div class="col-5"></div>
+      <div class="col-5"></div>
+      <div class="col-2 ">
+        <button class="btn btn-outline-primary" routerLink="/CrearNoticias">
+           <i class="fa fa-plus" aria-hidden="true"></i> </button>
+      </div>
+    </div>
+  </div>
+
   <!-- Publicaciones -->
 <div class="container" *ngFor="let public of publicaciones">
   <br>
@@ -61,14 +72,47 @@
       </div>
       <div class="description">
         <h1>{{public.title}}</h1>
+        <h2 *ngIf="_usuarioService.obtenerIdentidad().rol == 'ROL_ADMIN'" [routerLink]="['/Autor', public.author]">{{public.authorName}}</h2>
         <h2>{{public.datePublication}}</h2>
         <p class="read-more">
+
+          <i class="fa fa-pencil edit" aria-hidden="true" [routerLink]="['/EditarNoticia', public._id]"></i>
+
+          <i class="fa fa-trash-o delete" aria-hidden="true" data-bs-toggle="modal" data-bs-target="#EliminarPost"
+          (click)="obtenerPostId(public._id)" ></i>
+
           <a [routerLink]="['/Post', public._id]" >Leer más</a>
         </p>
       </div>
     </div>
 
   </div>
+</div>
+
+<!--MODAL ELIMINAR USUARIO-->
+<div class="modal fade" id="EliminarPost" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="staticBackdropLabel">
+        Eliminar Noticia
+      </h5>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+      ¿Esta seguro de eliminar la noticia <span style="font-weight: bold;">{{modelPost.title}}</span>?
+      <br> Se borraran todos los comentarios y la informacion de la noticia
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+        Cancelar
+      </button>
+      <button type="button" class="btn btn-danger" data-bs-dismiss="modal"
+       (click)="eliminarPost()">Eliminar</button>
+    </div>
+  </div>
+</div>
 </div>
 
 </div>

@@ -8,6 +8,7 @@ import { HomeComponent } from './Components/home/home.component';
 import { JuegosComponent } from './Components/juegos/juegos.component';
 import { LoginComponent } from './Components/login/login.component';
 import { PostCreateComponent } from './Components/post-create/post-create.component';
+import { PostEditComponent } from './Components/post-edit/post-edit.component';
 import { PostPanelComponent } from './Components/post-panel/post-panel.component';
 import { PublicacionesComponent } from './Components/publicaciones/publicaciones.component';
 import { PublicadoresComponent } from './Components/publicadores/publicadores.component';
@@ -24,6 +25,7 @@ const routes: Routes = [
   {path: 'Comentarios', component: ComentariosComponent},
   {path: 'PanelNoticias', component: PostPanelComponent},
   {path: 'CrearNoticias', component: PostCreateComponent},
+  {path: 'EditarNoticia/:idPost', component: PostEditComponent},
   {path: '**', component: HomeComponent}
 ];
 

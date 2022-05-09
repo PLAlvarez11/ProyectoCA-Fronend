@@ -40,7 +40,7 @@
   <div class="container">
     <div class="row justify-content-md-center d-none d-md-block">
       <div class="col-md-auto">
-        <h1>Crear Noticias</h1>
+        <h1>Editar Noticia</h1>
       </div>
     </div>
   </div>
@@ -65,7 +65,7 @@
               <div class="form-group" >
                 <p class="neg">Comentarios</p>
 
-                  <input  style="margin: 10px;" type="radio" id="true" name="comments" value="true" checked
+                  <input  style="margin: 10px;" type="radio" id="true" name="comments" value="true"
                   name="comments" #comments="ngModel" [(ngModel)]="modelPost.comments">
                   <label for="true">Activados</label>
 
@@ -86,7 +86,7 @@
 
               <br>
 
-              <button type="button" data-bs-dismiss="modal" class="btn btn-success" (click)="crearPost()" routerLink="/PanelNoticias" >
+              <button type="button" data-bs-dismiss="modal" class="btn btn-success" (click)="editarPost()" routerLink="/PanelNoticias" >
                 Guardar Cambios
               </button>
 

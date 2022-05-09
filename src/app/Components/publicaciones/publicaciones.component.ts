@@ -82,4 +82,30 @@ export class PublicacionesComponent implements OnInit {
       }
     )
   }
+
+  eliminarPost(idPost: any){
+    this._PostService.deletePost(idPost).subscribe(
+      response => {
+        Swal.fire({
+          position: 'top-end',
+          icon: 'success',
+          title: 'Publicacion eliminada',
+          showConfirmButton: false,
+          timer: 1500
+        })
+        window.location.reload();
+      },
+      error => {
+        console.log(<any>error)
+        Swal.fire({
+          position: 'top-end',
+          icon: 'error',
+          title: error.error.mensaje,
+          showConfirmButton: false,
+          timer: 1500
+        })
+      }
+    )
+  }
+
 }

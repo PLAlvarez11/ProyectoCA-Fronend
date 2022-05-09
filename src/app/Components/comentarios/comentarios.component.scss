@@ -492,6 +492,11 @@ height: 100%;
   color: gray;
  }
 
+ .comment-box .comment-name a:hover {
+  color: green;
+  cursor: pointer;
+ }
+
  .comment-box .comment-head span {
   float: left;
   color: #999;

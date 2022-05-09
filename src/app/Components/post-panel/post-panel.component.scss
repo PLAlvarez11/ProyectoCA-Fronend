@@ -512,3 +512,13 @@ h1{
     }
   }
 }
+
+.edit:hover{
+  color: orange;
+  cursor:pointer;
+}
+
+.delete:hover{
+  color: red;
+  cursor:pointer;
+}

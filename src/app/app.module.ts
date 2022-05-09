@@ -16,6 +16,7 @@ import { AutorComponent } from './Components/autor/autor.component';
 import { ComentariosComponent } from './Components/comentarios/comentarios.component';
 import { PostPanelComponent } from './Components/post-panel/post-panel.component';
 import { PostCreateComponent } from './Components/post-create/post-create.component';
+import { PostEditComponent } from './Components/post-edit/post-edit.component';
 
 
 
@@ -33,7 +34,8 @@ import { PostCreateComponent } from './Components/post-create/post-create.compon
     AutorComponent,
     ComentariosComponent,
     PostPanelComponent,
-    PostCreateComponent
+    PostCreateComponent,
+    PostEditComponent
   ],
   imports: [
     BrowserModule,
