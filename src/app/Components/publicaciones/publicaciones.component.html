@@ -23,6 +23,17 @@
             <br />
 
             <p style="color: black">{{ postList.description }}</p>
+
+            <br>
+
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div class="col-md-auto">
+      <youtube-player videoId={{link}} suggestedQuality="highres"></youtube-player>
+    </div>
+  </div>
+</div>
+
           </td>
         </tr>
       </table>
@@ -30,7 +41,7 @@
   </tr>
 </table>
 
-<hr>
+<br><hr>
 
 <div class="container" *ngIf="postList.comments === false">
   <br>

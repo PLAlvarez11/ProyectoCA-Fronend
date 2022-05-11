@@ -17,8 +17,7 @@ import { ComentariosComponent } from './Components/comentarios/comentarios.compo
 import { PostPanelComponent } from './Components/post-panel/post-panel.component';
 import { PostCreateComponent } from './Components/post-create/post-create.component';
 import { PostEditComponent } from './Components/post-edit/post-edit.component';
-
-
+import {YouTubePlayerModule} from '@angular/youtube-player';
 
 @NgModule({
   declarations: [
@@ -41,7 +40,8 @@ import { PostEditComponent } from './Components/post-edit/post-edit.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    YouTubePlayerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

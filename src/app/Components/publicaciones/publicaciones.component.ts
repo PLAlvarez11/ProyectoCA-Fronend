@@ -19,6 +19,7 @@ export class PublicacionesComponent implements OnInit {
   public postList: any;
   public comentarios: any;
   public modelComments: Comment;
+  public link: any;
 
   constructor(
     public _activatedRoute: ActivatedRoute,
@@ -31,6 +32,11 @@ export class PublicacionesComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    const tag = document.createElement('script');
+      tag.src = 'https://www.youtube.com/iframe_api';
+      document.body.appendChild(tag);
+      const apiLoaded = true;
+
     this._activatedRoute.paramMap.subscribe((dataRoute)=>{
       this.idPost = dataRoute.get('idPost')
     })
@@ -43,6 +49,7 @@ export class PublicacionesComponent implements OnInit {
       response => {
         this.modelPost = response.postFound;
         this.postList = response.postFound;
+        this.link = 'bHWYv0wulhw';
         console.log(response)
       }
     )
