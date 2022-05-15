@@ -42,8 +42,11 @@
 
   <div class="container">
     <div class="row justify-content-md-center d-none d-md-block">
-      <div class="col-md-auto">
+      <div class="col-md-auto" *ngIf="_usuarioService.obtenerIdentidad().rol == 'ROL_Publicador'">
         <h1>Mis Noticias</h1>
+      </div>
+      <div class="col-md-auto" *ngIf="_usuarioService.obtenerIdentidad().rol != 'ROL_Publicador'">
+        <h1>Panel de Noticas</h1>
       </div>
     </div>
   </div>
@@ -66,7 +69,7 @@
 
     <div class="blog-card">
       <div class="meta">
-        <div class="photo" style="background-image: url(https://storage.googleapis.com/chydlx/codepen/blog-cards/image-1.jpg)"></div>
+        <div class="photo" style="background-image: url({{public.picture}})"></div>
         <ul class="details">
         </ul>
       </div>
@@ -74,6 +77,11 @@
         <h1>{{public.title}}</h1>
         <h2 *ngIf="_usuarioService.obtenerIdentidad().rol == 'ROL_ADMIN'" [routerLink]="['/Autor', public.author]">{{public.authorName}}</h2>
         <h2>{{public.datePublication}}</h2>
+
+        <div class="module line-clamp">
+          <h2 >{{public.review}}</h2>
+        </div>
+
         <p class="read-more">
 
           <i class="fa fa-pencil edit" aria-hidden="true" [routerLink]="['/EditarNoticia', public._id]"></i>
@@ -89,7 +97,7 @@
   </div>
 </div>
 
-<!--MODAL ELIMINAR USUARIO-->
+<!--MODAL ELIMINAR POST-->
 <div class="modal fade" id="EliminarPost" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
 aria-labelledby="staticBackdropLabel" aria-hidden="true">
 <div class="modal-dialog">

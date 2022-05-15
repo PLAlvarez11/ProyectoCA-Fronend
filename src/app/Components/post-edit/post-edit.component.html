@@ -62,6 +62,23 @@
 
               <br>
 
+              <div class="form-group">
+                <label class="neg" for="picture">Imagen de la reseña </label> <br> <br>
+                <input type="text" placeholder="Ingrese link del la imagen" class="form-control" name="picture"
+                #picture="ngModel" [(ngModel)]="modelPost.picture"/>
+              </div>
+
+              <br>
+
+              <div class="form-group">
+                <label class="neg" for="review">Reseña de la noticia</label> <br> <br>
+                <textarea name="review" id="review" cols="30" rows="3"
+                  placeholder="Ingrese una pequeña reseña" class="form-control"
+                  name="review" #review="ngModel" [(ngModel)]="modelPost.review"></textarea>
+              </div>
+
+              <br>
+
               <div class="form-group" >
                 <p class="neg">Comentarios</p>
 
@@ -79,15 +96,27 @@
 
               <div class="form-group">
                 <label class="neg" for="description">Cuerpo de la noticia</label> <br> <br>
-                <textarea name="description" id="description" cols="30" rows="10"
+                <ckeditor name="description" id="description" cols="30" rows="10"
                   placeholder="Ingrese la descripcion de la noticia" class="form-control"
-                  name="description" #description="ngModel" [(ngModel)]="modelPost.description"></textarea>
+                  name="description" #description="ngModel" [(ngModel)]="modelPost.description"></ckeditor>
+              </div>
+
+              <br>
+
+              <div class="form-group">
+                <label class="neg" for="linkVideo">Video de Youtube <span class="opci">(Opcional)</span></label> <br> <br>
+                <input type="text" placeholder="Ingrese link del video de Youtube" class="form-control" name="linkVideo"
+                #linkVideo="ngModel" [(ngModel)]="modelPost.linkVideo"/>
               </div>
 
               <br>
 
               <button type="button" data-bs-dismiss="modal" class="btn btn-success" (click)="editarPost()" routerLink="/PanelNoticias" >
                 Guardar Cambios
+              </button>
+
+              <button style="margin: 10px" type="button" data-bs-dismiss="modal" class="btn btn-secondary" routerLink="/PanelNoticias"  >
+                Cancelar
               </button>
 
             </form>

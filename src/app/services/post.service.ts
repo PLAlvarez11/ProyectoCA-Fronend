@@ -58,4 +58,8 @@ export class PostService {
     let headersToken = this.headersVariable.set('Authorization', this.obtenerToken());
     return this._http.delete(this.ruta + 'deletePost/' + idPost, {headers: headersToken})
   }
+
+  enVivo(): Observable<any> {
+    return this._http.get(this.ruta + 'postLive', {headers: this.headersVariable, });
+  }
 }

@@ -18,6 +18,7 @@ import { PostPanelComponent } from './Components/post-panel/post-panel.component
 import { PostCreateComponent } from './Components/post-create/post-create.component';
 import { PostEditComponent } from './Components/post-edit/post-edit.component';
 import {YouTubePlayerModule} from '@angular/youtube-player';
+import { CKEditorModule } from 'ckeditor4-angular';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import {YouTubePlayerModule} from '@angular/youtube-player';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    YouTubePlayerModule
+    YouTubePlayerModule,
+    CKEditorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

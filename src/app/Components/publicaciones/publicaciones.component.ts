@@ -5,12 +5,13 @@ import Swal from 'sweetalert2';
 import { CommentService } from 'src/app/services/comment.service';
 import { Comment } from 'src/app/Modelos/comments.model';
 import { Post } from 'src/app/Modelos/post.model';
+import { UsuariosService } from 'src/app/services/usuarios.service';
 
 @Component({
   selector: 'app-publicaciones',
   templateUrl: './publicaciones.component.html',
   styleUrls: ['./publicaciones.component.scss'],
-  providers: [PostService]
+  providers: [PostService, UsuariosService]
 })
 export class PublicacionesComponent implements OnInit {
 
@@ -24,11 +25,12 @@ export class PublicacionesComponent implements OnInit {
   constructor(
     public _activatedRoute: ActivatedRoute,
     public _PostService: PostService,
+    public _usuarioService: UsuariosService,
     private _router: Router,
     private _CommentService: CommentService
   ) {
-    this.modelComments = new Comment('', '', '', '');
-    this.modelPost = new Post('', '', '', '', '', '', '', '', false)
+    this.modelComments = new Comment('', '', '', '', false);
+    this.modelPost = new Post('','','','','','','','', false, '', '', false,'');
   }
 
   ngOnInit(): void {
@@ -49,7 +51,7 @@ export class PublicacionesComponent implements OnInit {
       response => {
         this.modelPost = response.postFound;
         this.postList = response.postFound;
-        this.link = 'bHWYv0wulhw';
+        this.link = response.postFound.linkVideo;
         console.log(response)
       }
     )

@@ -3,6 +3,7 @@ export class Comment{
     public comment: String,
     public idPost: String,
     public namePost: String,
-    public datePublication: String
+    public datePublication: String,
+    public admin: Boolean
   ){}
 }

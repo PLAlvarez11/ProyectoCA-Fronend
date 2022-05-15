@@ -19,7 +19,7 @@ export class PostPanelComponent implements OnInit {
     public _usuarioService: UsuariosService,
     private _postService: PostService,
   ) {
-    this.modelPost = new Post('','','','','','','','', false);
+    this.modelPost = new Post('','','','','','','','', false, '', '', false, '');
   }
 
   ngOnInit(): void {

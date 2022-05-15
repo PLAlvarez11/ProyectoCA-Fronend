@@ -22,7 +22,7 @@ export class ComentariosComponent implements OnInit {
     public _usuarioService: UsuariosService
 
   ) {
-    this.modelComments = new Comment('', '', '', '');
+    this.modelComments = new Comment('', '', '', '', false);
   }
 
   ngOnInit(): void {

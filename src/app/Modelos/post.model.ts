@@ -8,6 +8,10 @@ export class Post{
       public dateUpdate: String,
       public author: String,
       public authorName: String,
-      public comments: Boolean
+      public comments: Boolean,
+      public linkVideo: String,
+      public review: String,
+      public live: Boolean,
+      public dateHoy: String
     ){}
   }

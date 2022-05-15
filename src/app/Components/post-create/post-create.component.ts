@@ -21,7 +21,7 @@ export class PostCreateComponent implements OnInit {
     public _postService: PostService
 
   ) {
-    this.modelPost = new Post('','','','','','','','', false);
+    this.modelPost = new Post('','','','','','','','', false, '', '', false, '');
   }
 
   ngOnInit(): void {
@@ -38,7 +38,7 @@ export class PostCreateComponent implements OnInit {
           showConfirmButton: false,
           timer: 1500
         })
-        window.location.reload()
+        this._router.navigate(['/PanelNoticias']);
       },
       error => {
         console.log(<any>error)

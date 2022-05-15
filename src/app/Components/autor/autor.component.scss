@@ -123,7 +123,6 @@ h1{
     h2 {
       font-size: 1rem;
       font-weight: 300;
-      text-transform: uppercase;
       color: $color_grey_dark;
       margin-top: 5px;
     }
@@ -207,4 +206,15 @@ h1{
       }
     }
   }
+}
+
+.line-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.module {
+  margin: 0 0 1em 0;
+  overflow: hidden;
 }

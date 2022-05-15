@@ -2,31 +2,68 @@
   <h2>Colonia CentroAmerica</h2>
 </div>
 
-<!-- <br>
-<div class="container">
-  <div class="row">
-    <div class="col">
-      <h1>Noticias</h1>
-    </div>
-    <div class="col">
-    </div>
-  </div> -->
-
 <br>
+
+<div *ngIf="vivoList != null">
+
+  <div class="container">
+    <div class="row justify-content-md-center">
+      <div class="col-md-auto">
+        <h3>Eventos En Vivo</h3>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" *ngFor="let public of vivoList">
+    <div>
+
+      <div class="blog-card">
+        <div class="meta">
+          <div class="photo" style="background-image: url({{public.picture}})"></div>
+          <ul class="details">
+          </ul>
+        </div>
+        <div class="description">
+          <h1>{{public.title}}</h1>
+          <h2>{{public.datePublication}}</h2>
+
+          <br>
+
+          <div class="module line-clamp">
+            <h2 >{{public.review}}</h2>
+          </div>
+
+          <p class="read-more">
+            <a [routerLink]="['/Post', public._id]" >Leer más</a>
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+    <hr>
+</div>
 
 <div class="container" *ngFor="let public of publicaciones">
   <div>
 
     <div class="blog-card">
       <div class="meta">
-        <div class="photo" style="background-image: url(https://storage.googleapis.com/chydlx/codepen/blog-cards/image-1.jpg)"></div>
+        <div class="photo" style="background-image: url({{public.picture}})"></div>
         <ul class="details">
         </ul>
       </div>
       <div class="description">
         <h1>{{public.title}}</h1>
         <h2>{{public.datePublication}}</h2>
-        <h2 [routerLink]="['/Autor', public.author]">{{public.authorName}}</h2>
+
+        <br>
+
+        <div class="module line-clamp">
+          <h2 >{{public.review}}</h2>
+        </div>
+
         <p class="read-more">
           <a [routerLink]="['/Post', public._id]" >Leer más</a>
         </p>

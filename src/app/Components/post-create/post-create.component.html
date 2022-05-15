@@ -57,21 +57,37 @@
               <div class="form-group">
                 <label class="neg" for="title">Titulo</label> <br> <br>
                 <input type="text" placeholder="Ingrese el titulo de la noticia" class="form-control" name="title"
-                #title="ngModel" [(ngModel)]="modelPost.title"/>
+                  #title="ngModel" [(ngModel)]="modelPost.title" />
               </div>
 
               <br>
 
-              <div class="form-group" >
+              <div class="form-group">
+                <label class="neg" for="picture">Imagen de la reseña </label> <br> <br>
+                <input type="text" placeholder="Ingrese link del la imagen" class="form-control" name="picture"
+                  #picture="ngModel" [(ngModel)]="modelPost.picture" />
+              </div>
+
+              <br>
+
+              <div class="form-group">
+                <label class="neg" for="review">Reseña de la noticia</label> <br> <br>
+                <textarea name="review" id="review" cols="30" rows="3" placeholder="Ingrese una pequeña reseña"
+                  class="form-control" name="review" #review="ngModel" [(ngModel)]="modelPost.review"></textarea>
+              </div>
+
+              <br>
+
+              <div class="form-group">
                 <p class="neg">Comentarios</p>
 
-                  <input  style="margin: 10px;" type="radio" id="true" name="comments" value="true" checked
-                  name="comments" #comments="ngModel" [(ngModel)]="modelPost.comments">
-                  <label for="true">Activados</label>
+                <input style="margin: 10px;" type="radio" id="true" name="comments" value="true" checked name="comments"
+                  #comments="ngModel" [(ngModel)]="modelPost.comments">
+                <label for="true">Activados</label>
 
-                  <input style="margin: 10px;" type="radio" id="false" name="comments" value="false"
-                  name="comments" #comments="ngModel" [(ngModel)]="modelPost.comments">
-                  <label for="false">Desactivados</label>
+                <input style="margin: 10px;" type="radio" id="false" name="comments" value="false" name="comments"
+                  #comments="ngModel" [(ngModel)]="modelPost.comments">
+                <label for="false">Desactivados</label>
 
               </div>
 
@@ -79,15 +95,36 @@
 
               <div class="form-group">
                 <label class="neg" for="description">Cuerpo de la noticia</label> <br> <br>
-                <textarea name="description" id="description" cols="30" rows="10"
-                  placeholder="Ingrese la descripcion de la noticia" class="form-control"
-                  name="description" #description="ngModel" [(ngModel)]="modelPost.description"></textarea>
+                <ckeditor name="description" id="description" cols="30" rows="10"
+                  placeholder="Ingrese la descripcion de la noticia" class="form-control" name="description"
+                  #description="ngModel" [(ngModel)]="modelPost.description"></ckeditor>
               </div>
 
               <br>
 
-              <button type="button" data-bs-dismiss="modal" class="btn btn-success" (click)="crearPost()" routerLink="/PanelNoticias" >
+              <div class="form-group">
+                <label class="neg" for="linkVideo">Video de Youtube <span class="opci">(Opcional)</span></label> <br>
+                <br>
+                <input type="text" placeholder="Ingrese link del video de Youtube" class="form-control" name="linkVideo"
+                  #linkVideo="ngModel" [(ngModel)]="modelPost.linkVideo" />
+              </div>
+
+              <br>
+
+              <div class="form-group">
+                <input style="margin: 10px;" type="checkbox" id="true" name="live" value="true" checked name="live"
+                  #live="ngModel" [(ngModel)]="modelPost.live">
+                <label for="true">En Vivo</label>
+              </div>
+
+              <br>
+
+              <button type="button" data-bs-dismiss="modal" class="btn btn-success" (click)="crearPost()">
                 Guardar Cambios
+              </button>
+              <button style="margin: 10px" type="button" data-bs-dismiss="modal" class="btn btn-secondary"
+                routerLink="/PanelNoticias">
+                Cancelar
               </button>
 
             </form>

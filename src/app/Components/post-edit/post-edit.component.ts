@@ -22,7 +22,7 @@ export class PostEditComponent implements OnInit {
     private _router: Router,
     public _PostService: PostService
   ) {
-    this.modelPost = new Post('','','','','','','','', false);
+    this.modelPost = new Post('','','','','','','','', false, '', '', false, '');
   }
 
   ngOnInit(
