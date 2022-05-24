@@ -19,6 +19,7 @@ import { PostCreateComponent } from './Components/post-create/post-create.compon
 import { PostEditComponent } from './Components/post-edit/post-edit.component';
 import {YouTubePlayerModule} from '@angular/youtube-player';
 import { CKEditorModule } from 'ckeditor4-angular';
+import { MedioAmbienteComponent } from './Components/medio-ambiente/medio-ambiente.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { CKEditorModule } from 'ckeditor4-angular';
     ComentariosComponent,
     PostPanelComponent,
     PostCreateComponent,
-    PostEditComponent
+    PostEditComponent,
+    MedioAmbienteComponent
   ],
   imports: [
     BrowserModule,

@@ -377,15 +377,15 @@ label {
   margin-top: 100px;
 }
 a {
-    color: #0054A6;
+    color: green;
 }
 a {
-    color: #0054A6;
+    color: green;
     text-decoration: none;
 }
 .btn-primary {
     color: #fff;
-    background:  linear-gradient(45deg, #00AFD0, #0054A6);
+    background:  linear-gradient(45deg, rgb(0, 205, 0), green);
     display: block;
 }
 h3{
@@ -404,8 +404,8 @@ h3{
 }
 
 .btn-submit {
-  background-color: #00AFD0;
-  border-color: #0054A6;
+  background-color: rgb(0, 205, 0);
+  border-color: green;
 }
 .btn {
   border-radius: 3px;
@@ -420,7 +420,7 @@ h3{
     margin-bottom: 15px;
 }
 .left.box-primary {
-    border-top-color: #0054A6;
+    border-top-color: green;
 
 }
 .left {
@@ -469,24 +469,24 @@ h3{
   margin-bottom: 20px;
   height: 40px;
   border: none;
-  border-bottom: 2px solid #0054A6;
+  border-bottom: 2px solid green;
   outline: none;
   background: transparent;
   padding-left: 40px;
   font-weight: bold;
-  color: #0054A6;
+  color: green;
 }
 
 .infinity-form .form-input span {
   position: absolute;
   top: 8px;
   padding-left: 10px;
-  color: #0054A6;
+  color: green;
 }
 
 .infinity-form .form-input input:focus,
 .infinity-form .form-input input:valid {
-  border-bottom: 2px solid #0054A6;
+  border-bottom: 2px solid green;
 }
 
 
@@ -496,7 +496,7 @@ h3{
   border: none;
   cursor: pointer;
   border-radius: 20px;
-  background: linear-gradient(45deg, #00AFD0, #0054A6); /*Button Color*/
+  background: linear-gradient(45deg, rgb(0, 205, 0), green); /*Button Color*/
   color: #fff;
   font-weight: bold;
   transition: 0.5s;
@@ -505,8 +505,8 @@ h3{
 .infinity-form button[type="submit"]:hover {
   background: linear-gradient(
     45deg,
-    #0054A6,
-    #00AFD0
+    green,
+    rgb(0, 205, 0)
   ); /*Button color when hover*/
 }
 
@@ -519,4 +519,8 @@ h3{
   width: 45px;
   margin-left: 1200px;
   border-radius: 40px;
+}
+
+h1{
+  color: green;
 }

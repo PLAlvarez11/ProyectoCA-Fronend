@@ -45,7 +45,8 @@
    <div class="container">
     <div class="row justify-content-md-center d-none d-md-block">
       <div class="col-md-auto">
-        <h1>Panel de Comentarios</h1>
+        <br> <br>
+        <h1 class="titulo">Panel de Comentarios</h1>
       </div>
     </div>
   </div>
@@ -65,7 +66,8 @@
                     <h6 class="comment-name" [routerLink]="['/Post', comts.idPost]"><a>{{comts.namePost}}</a></h6>
                     <span>{{ comts.datePublication }}</span>
 
-                    <i class="fa fa-trash-o" aria-hidden="true" data-bs-toggle="modal" data-bs-target="#EliminarComment" (click)="getComment(comts._id)" ></i>
+                    <i class="fa fa-trash-o deletes"  style="color: red;" aria-hidden="true" data-bs-toggle="modal" data-bs-target="#EliminarComment"
+                      (click)="getComment(comts._id)" ></i>
 
                   </div>
                   <div class="comment-content">

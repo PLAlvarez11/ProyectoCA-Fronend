@@ -7,6 +7,7 @@ import { HistoriaComponent } from './Components/historia/historia.component';
 import { HomeComponent } from './Components/home/home.component';
 import { JuegosComponent } from './Components/juegos/juegos.component';
 import { LoginComponent } from './Components/login/login.component';
+import { MedioAmbienteComponent } from './Components/medio-ambiente/medio-ambiente.component';
 import { PostCreateComponent } from './Components/post-create/post-create.component';
 import { PostEditComponent } from './Components/post-edit/post-edit.component';
 import { PostPanelComponent } from './Components/post-panel/post-panel.component';
@@ -26,6 +27,7 @@ const routes: Routes = [
   {path: 'PanelNoticias', component: PostPanelComponent},
   {path: 'CrearNoticias', component: PostCreateComponent},
   {path: 'EditarNoticia/:idPost', component: PostEditComponent},
+  {path: 'MedioAmbiente', component: MedioAmbienteComponent},
   {path: '**', component: HomeComponent}
 ];
 

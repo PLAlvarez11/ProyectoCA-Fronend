@@ -41,14 +41,19 @@
   </nav>
 
   <div class="container">
+
+    <br> <br>
+
     <div class="row justify-content-md-center d-none d-md-block">
       <div class="col-md-auto" *ngIf="_usuarioService.obtenerIdentidad().rol == 'ROL_Publicador'">
-        <h1>Mis Noticias</h1>
+        <h1 class="titulo">Mis Noticias</h1>
       </div>
       <div class="col-md-auto" *ngIf="_usuarioService.obtenerIdentidad().rol != 'ROL_Publicador'">
-        <h1>Panel de Noticas</h1>
+        <h1 class="titulo">Panel de Noticas</h1>
       </div>
     </div>
+
+    <br> <br>
   </div>
 
   <div class="container" *ngIf="_usuarioService.obtenerIdentidad().rol == 'ROL_Publicador' ">
@@ -56,7 +61,7 @@
       <div class="col-5"></div>
       <div class="col-5"></div>
       <div class="col-2 ">
-        <button class="btn btn-outline-primary" routerLink="/CrearNoticias">
+        <button class="btn btn-outline-success" routerLink="/CrearNoticias">
            <i class="fa fa-plus" aria-hidden="true"></i> </button>
       </div>
     </div>
@@ -85,7 +90,6 @@
         <p class="read-more">
 
           <i class="fa fa-pencil edit" aria-hidden="true" [routerLink]="['/EditarNoticia', public._id]"></i>
-
           <i class="fa fa-trash-o delete" aria-hidden="true" data-bs-toggle="modal" data-bs-target="#EliminarPost"
           (click)="obtenerPostId(public._id)" ></i>
 

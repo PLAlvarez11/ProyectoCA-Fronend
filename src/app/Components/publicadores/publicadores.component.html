@@ -40,10 +40,13 @@
   </nav>
 
   <!-- Titulo -->
-  <div class="container">
+  <div class="container bann">
+
+    <br> <br>
+
     <div class="row justify-content-md-center d-none d-md-block">
       <div class="col-md-auto">
-        <h1>Panel Publicadores</h1>
+        <h1 class="titulo">Panel Publicadores</h1>
       </div>
     </div>
   </div>
@@ -53,7 +56,7 @@
       <div class="col-5"></div>
       <div class="col-5"></div>
       <div class="col-2 ">
-        <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#CreateUser">
+        <button class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#CreateUser">
            <i class="fa fa-plus" aria-hidden="true"></i> </button>
       </div>
     </div>
@@ -79,19 +82,19 @@
                   <h6 class="text-muted">Publicador</h6>
 
                   <div class="btn-group" role="group" aria-label="Basic outlined example">
-                    <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#EditarUser"
+                    <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#EditarUser"
                       *ngIf="_usuarioService.obtenerIdentidad().rol == 'ROL_ADMIN' " (click)="getUsuario(usua._id)">
                       <i class="fa fa-pencil" aria-hidden="true"></i></button>
 
-                    <button type="button" class="btn btn-outline-primary"
+                    <button type="button" class="btn btn-outline-info"
                       *ngIf="_usuarioService.obtenerIdentidad().rol == 'ROL_ADMIN' "  [routerLink]="['/Autor', usua._id]">
                       <i class="fa fa-file" aria-hidden="true"></i></button>
 
-                    <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#EliminarUser"
+                    <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#EliminarUser"
                       *ngIf="_usuarioService.obtenerIdentidad().rol == 'ROL_ADMIN' " (click)="getUsuario(usua._id)">
                       <i class="fa fa-trash-o" aria-hidden="true"></i></button>
                   </div>
-                  <button type="button" class="btn btn-outline-primary" [routerLink]="['/Autor', usua._id]"
+                  <button type="button" class="btn btn-outline-info" [routerLink]="['/Autor', usua._id]"
                     *ngIf="_usuarioService.obtenerIdentidad().rol != 'ROL_ADMIN' ">
                     Ver Publicaciones
                   </button>

@@ -493,7 +493,7 @@ height: 100%;
  }
 
  .comment-box .comment-name a:hover {
-  color: green;
+  color: black;
   cursor: pointer;
  }
 
@@ -551,3 +551,9 @@ height: 100%;
    border-left: 0;
    border-right: 0;
  }
+
+ .titulo{
+  text-align: left;
+  color: green;
+}
+
